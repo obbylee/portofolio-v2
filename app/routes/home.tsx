@@ -154,20 +154,35 @@ export default function Home() {
         <div className="flex gap-4 mt-4">
           {/* Resume Button */}
           <Button
+            asChild // This tells the Button component to render its child as an 'a' tag
             variant="outline"
             className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
           >
-            <DownloadCloudIcon className="h-5 w-5" />
-            <span>Resume</span>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Resume (PDF)"
+            >
+              <DownloadCloudIcon className="h-5 w-5 mr-2" />
+              <span>Resume</span>
+            </a>
           </Button>
 
           {/* Email Me Button */}
           <Button
+            asChild
             variant="outline"
             className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
           >
-            <SendHorizonalIcon className="h-5 w-5" />
-            <span>Email me</span>
+            {/* Use mailto: protocol for email links */}
+            <a
+              href="mailto:leeobbyw@gmail.com?subject=Inquiry from your Portfolio Website&body=Hello!"
+              aria-label="Send an Email"
+            >
+              <SendHorizonalIcon className="h-5 w-5 mr-2" />
+              <span>Email me</span>
+            </a>
           </Button>
         </div>
 
