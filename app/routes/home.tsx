@@ -2,8 +2,9 @@ import type { Route } from "./+types/home";
 import { Button } from "~/components/ui/button";
 import { DownloadCloudIcon, SendHorizonalIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { type SectionLink, type TimelineItem } from "~/data";
-import { sections, myTimelineData } from "~/data";
+import { type SectionLink, type TimelineItem, type ProjectItem } from "~/data";
+import { sections, myTimelineData, myProjectsData } from "~/data";
+import { GithubIcon, LinkIcon } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -393,15 +394,87 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-heading" className="py-16 hidden">
+        <section id="projects" aria-labelledby="projects-heading" className="py-16">
           <h2
             id="projects-heading"
             className="md:hidden sticky top-0 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
           >
-            Projects
+            Featured Projects
           </h2>
 
-          <div className="h-screen" />
+          <div className="grid grid-cols-1 gap-8 px-4 sm:px-6 lg:px-8">
+            {myProjectsData.map((project: ProjectItem) => (
+              <div
+                key={project.id}
+                className="group relative rounded-lg shadow-md overflow-hidden
+                       bg-gray-50 dark:bg-gray-800
+                       border border-gray-200 dark:border-gray-700
+                       hover:shadow-lg transition-all duration-300 ease-in-out
+                       flex flex-col h-full" // Use flex-col and h-full for consistent card height
+              >
+                {project.image && (
+                  <div className="relative w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={`Screenshot of ${project.title}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy" // Optimize image loading
+                    />
+                    {/* Optional overlay for better text readability on images */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
+                  </div>
+                )}
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="mb-2 font-bold text-xl text-blue-700 dark:text-blue-400">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow">
+                    {project.description}
+                  </p>
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 dark:border-gray-700 mt-auto">
+                    {project.techStack.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium
+                               bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Links */}
+                  <div className="flex gap-4 mt-4">
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
+                        aria-label={`View ${project.title} on GitHub`}
+                      >
+                        <GithubIcon className="h-5 w-5 mr-1" />
+                        <span>GitHub</span>
+                      </a>
+                    )}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
+                        aria-label={`View live demo of ${project.title}`}
+                      >
+                        <LinkIcon className="h-5 w-5 mr-1" />
+                        <span>Live Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <footer className="bg-white dark:bg-gray-900 py-8 text-center text-gray-600 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-800">
