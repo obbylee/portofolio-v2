@@ -36,14 +36,15 @@ export const myTimelineData: TimelineItem[] = [
     techStack: [
       "PHP",
       "Laminas",
+      "Slim FrameWork",
       "React",
       "React Boostrap",
       "React Native",
       "NativeBase",
       "MySQL",
-      "POSTGRESQL",
+      "Postgresql",
       "Docker",
-    ], // Example tech stack
+    ],
   },
   {
     id: "stiesia",
@@ -52,7 +53,16 @@ export const myTimelineData: TimelineItem[] = [
     company: "Sekolah Tinggi Ilmu Ekonomi Indonesia (STIESIA)",
     description:
       "Developed and optimized catalog, library, and inventory management systems to improve data accuracy and operational efficiency. Contributed to streamlining internal processes through custom software solutions.",
-    techStack: ["PHP", "CodeIgniter", "Laravel", "Wordpress", "MySQL", "JavaScript", "jQuery"], // Example tech stack
+    techStack: [
+      "PHP",
+      "CodeIgniter",
+      "Laravel",
+      "JavaScript",
+      "jQuery",
+      "Wordpress",
+      "MySQL",
+      "SQL Server",
+    ],
   },
 ];
 
@@ -126,11 +136,37 @@ export const myProjectsData: ProjectItem[] = [
     liveLink: "https://portofolio-seven-gamma.vercel.app/",
   },
   {
+    id: "promtopia",
+    title: "Promptopia",
+    description:
+      "Promptopia is an open-source platform designed for the AI community to effortlessly discover, create, and share innovative AI prompts.",
+    image: promptopiaScreenshoot,
+    techStack: [
+      "NextJS",
+      "React",
+      "Tailwind CSS",
+      "Next Auth",
+      "Mongoose",
+      "MongoDB",
+      "Vercel",
+    ],
+    githubLink: "https://github.com/obbylee/portofolio/tree/main/promptopia",
+    liveLink: "https://promptopia-nine-tau.vercel.app/",
+  },
+  {
     id: "mflix",
     title: "Mflix Movies Api",
     description:
       "A free and open-source RESTful API that provides detailed information about movies.",
-    techStack: ["Typescript", "Zod", "Prisma ORM", "Postgresql", "Hono", "Bun", "Docker"],
+    techStack: [
+      "Typescript",
+      "Zod",
+      "Prisma ORM",
+      "Postgresql",
+      "Hono",
+      "Bun",
+      "Docker",
+    ],
     githubLink: "https://github.com/obbylee/mflix",
   },
   {
@@ -138,20 +174,17 @@ export const myProjectsData: ProjectItem[] = [
     title: "Portfolio Website (This one!)",
     description:
       "My personal portfolio website, showcasing my skills, experience, and projects. Designed with a clean, professional aesthetic and built for optimal performance and user experience.",
-    techStack: ["React", "Tailwind CSS", "Vite/React Router", "TypeScript", "Vercel"],
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Vite/React Router",
+      "TypeScript",
+      "Vercel",
+    ],
     githubLink: "https://github.com/your-username/your-portfolio-repo",
     liveLink: "https://your-portfolio-url.vercel.app/",
   },
-  {
-    id: "promtopia",
-    title: "Promptopia",
-    description:
-      "A full-stack clone of Meta’s Threads — a modern, minimalist social media app for text-based conversations.",
-    image: promptopiaScreenshoot,
-    techStack: ["NextJS", "React", "Tailwind CSS", "Next Auth", "Mongoose", "MongoDB", "Vercel"],
-    githubLink: "https://github.com/obbylee/portofolio/tree/main/promptopia",
-    liveLink: "https://promptopia-nine-tau.vercel.app/",
-  },
+
   {
     id: "carhub",
     title: "Carhub",

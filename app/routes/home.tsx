@@ -102,15 +102,14 @@ export default function Home() {
         role="complementary"
         aria-label="Author Information and Navigation"
       >
-        <header>
+        <header className="font-mono flex flex-col gap-4">
+          <h3 className="text-lg font-bold">_hello, I'am Lee</h3>
           <h1 className="text-4xl font-extrabold text-gray-800 dark:text-gray-100">
-            LEE OBBY WAQOZ
+            Fullstack Developer
           </h1>
-          <h2 className="text-xl font-bold mt-4 text-blue-700 dark:text-blue-400">
-            Fullstack Developer 🚀
-          </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-sm">
-            Specializing in end-to-end web development, with a passion for what's next.
+            Specializing in end-to-end web development, with a passion for
+            what's next.
           </p>
         </header>
 
@@ -135,7 +134,10 @@ export default function Home() {
                       e.preventDefault(); // Prevent default instant jump
                       const targetElement = document.getElementById(section.id); // Get element by ID (without '#')
                       if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                        targetElement.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
                       }
                       // Update URL hash and add to browser history
                       window.history.pushState(null, "", targetHref);
@@ -151,12 +153,11 @@ export default function Home() {
           </ul>
         </nav>
 
-        <div className="flex gap-4 mt-4">
-          {/* Resume Button */}
+        <div className="hidden flex gap-4 mt-4">
           <Button
-            asChild // This tells the Button component to render its child as an 'a' tag
+            asChild
             variant="outline"
-            className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
+            className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-white"
           >
             <a
               href="/resume.pdf"
@@ -169,13 +170,11 @@ export default function Home() {
             </a>
           </Button>
 
-          {/* Email Me Button */}
           <Button
             asChild
             variant="outline"
-            className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
+            className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-white"
           >
-            {/* Use mailto: protocol for email links */}
             <a
               href="mailto:leeobbyw@gmail.com?subject=Inquiry from your Portfolio Website&body=Hello!"
               aria-label="Send an Email"
@@ -188,14 +187,7 @@ export default function Home() {
 
         <footer className="mt-auto" aria-label="Social Media Links">
           <ul className="flex gap-2">
-            {/* GitHub Icon */}
-            <li
-              className="border p-2 h-10 w-10 rounded-md transition duration-300 ease-in-out
-              border-gray-300 dark:border-gray-700
-              bg-white dark:bg-gray-900
-              text-gray-800 dark:text-gray-200
-              hover:bg-blue-700 hover:border-blue-700 hover:text-white dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:hover:text-white"
-            >
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
               <a
                 href="https://github.com/obbylee"
                 target="_blank"
@@ -216,14 +208,7 @@ export default function Home() {
               </a>
             </li>
 
-            {/* LinkedIn Icon */}
-            <li
-              className="border p-2 h-10 w-10 rounded-md transition duration-300 ease-in-out
-              border-gray-300 dark:border-gray-700
-              bg-white dark:bg-gray-900
-              text-gray-800 dark:text-gray-200
-              hover:bg-blue-700 hover:border-blue-700 hover:text-white dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:hover:text-white"
-            >
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
               <a
                 href="https://www.linkedin.com/in/leeobby/"
                 target="_blank"
@@ -244,14 +229,7 @@ export default function Home() {
               </a>
             </li>
 
-            {/* Telegram Icon (assuming this was the intent for the 'Twitter' SVG path) */}
-            <li
-              className="border p-2 h-10 w-10 rounded-md transition duration-300 ease-in-out
-              border-gray-300 dark:border-gray-700
-              bg-white dark:bg-gray-900
-              text-gray-800 dark:text-gray-200
-              hover:bg-blue-700 hover:border-blue-700 hover:text-white dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:hover:text-white"
-            >
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
               <a
                 href="https://t.me/leeobby"
                 target="_blank"
@@ -272,14 +250,7 @@ export default function Home() {
               </a>
             </li>
 
-            {/* Discord Icon (assuming this was the intent for the last SVG path) */}
-            <li
-              className="border p-2 h-10 w-10 rounded-md transition duration-300 ease-in-out
-              border-gray-300 dark:border-gray-700
-              bg-white dark:bg-gray-900
-              text-gray-800 dark:text-gray-200
-              hover:bg-blue-700 hover:border-blue-700 hover:text-white dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:hover:text-white"
-            >
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
               <a
                 href="https://discord.com/users/your-discord-id"
                 target="_blank"
@@ -303,7 +274,7 @@ export default function Home() {
         </footer>
       </aside>
 
-      <main className="min-h-screen py-8">
+      <main className="min-h-screen py-8 font-mono">
         <section id="about" aria-labelledby="about-heading" className="py-8">
           <h2
             id="about-heading"
@@ -311,40 +282,37 @@ export default function Home() {
           >
             About me
           </h2>
-          <p className="text-gray-800 dark:text-gray-400">
-            👋 I'm Lee, a Fullstack Developer who loves bringing complex visions to life as
-            intuitive, robust, and impactful web applications. I excel at bridging powerful backend
-            systems with seamless user experiences, building applications that are both highly
-            functional and genuinely delightful.
-          </p>
+
           <p className="text-gray-800 dark:text-gray-400 mt-2">
             Currently, I'm a{" "}
-            <span className="font-bold text-blue-700 dark:text-blue-400">Software Engineer</span> at{" "}
-            <span className="text-blue-700 dark:text-blue-400">HashField</span>, where I lead the
-            development of{" "}
-            <span className="font-bold text-blue-700 dark:text-blue-400">inadmin.io</span>, an
-            innovative SAAS platform designed for efficient web application building. This involves
-            creating flexible drag-and-drop form builders with comprehensive analytics, implementing
-            intricate multi-level approval workflows, and ensuring robust data management. I also
-            build web-based budgeting and expense trackers that automate financial planning.
+            <span className="font-bold text-blue-700 dark:text-blue-400">
+              Software Engineer
+            </span>{" "}
+            at{" "}
+            <span className="text-blue-700 dark:text-blue-400">HashField</span>,
+            where I lead the development of{" "}
+            <span className="font-bold text-blue-700 dark:text-blue-400">
+              inadmin.io
+            </span>
+            , an innovative SAAS platform designed for efficient web application
+            building. This involves creating flexible drag-and-drop form
+            builders with comprehensive analytics, implementing intricate
+            multi-level approval workflows, and ensuring robust data management.
           </p>
+
           <p className="text-gray-800 dark:text-gray-400 mt-2">
-            In the past, I've developed diverse software solutions across various settings. My
-            experience includes optimizing catalog, library, and inventory management systems for
-            improved efficiency and data accuracy at{" "}
-            <a href="https://stiesia.ac.id/" className="text-blue-700 dark:text-blue-400">
-              Sekolah Tinggi Ilmu Ekonomi Indonesia (STIESIA)
-            </a>
-            .
-          </p>
-          <p className="text-gray-800 dark:text-gray-400 mt-2">
-            When I finally pull myself away from the keyboard, my happy place is often found getting
-            cozy with a good Wuxia novel 📖 or joyfully battling dragons and completing quests in
-            the vast worlds of RPG games 🎮.
+            When I finally pull myself away from the keyboard, my happy place is
+            often found getting cozy with a good Wuxia novel 📖 or joyfully
+            battling dragons and completing quests in the vast worlds of RPG
+            games 🎮.
           </p>
         </section>
 
-        <section id="timeline" aria-labelledby="timeline-heading" className="py-8">
+        <section
+          id="timeline"
+          aria-labelledby="timeline-heading"
+          className="py-8"
+        >
           <h2
             id="timeline-heading"
             className="md:hidden sticky top-0 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
@@ -352,64 +320,51 @@ export default function Home() {
             Experiences
           </h2>
 
-          {/* Main container for the timeline content, ensures internal padding */}
-          <div className="relative px-4 sm:px-6 lg:px-8">
-            {/* Vertical Line - always on the far left of the content area */}
-            <div className="absolute left-0 top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></div>
-
+          <div className="flex flex-col gap-4">
             {myTimelineData.map((item: TimelineItem) => (
               <div
                 key={item.id}
-                // All items align to the right of the vertical line
-                className="mb-10 flex items-start w-full relative last:mb-0"
+                className="w-full py-4 px-6 rounded-md bg-gray-50 dark:bg-gray-800 text-left border hover:border-blue-400"
               >
-                {/* Timeline Dot - positioned on the vertical line */}
-                <div className="z-10 flex-shrink-0 bg-blue-700 dark:bg-blue-400 shadow-lg w-6 h-6 rounded-full absolute left-0 transform -translate-x-1/2 top-0 flex justify-center items-center">
-                  {/* This dot visually sits on the vertical line */}
-                </div>
-
-                {/* Content Card - always on the right side */}
-                <div
-                  className={`w-full py-4 px-6 rounded-lg shadow-md
-                bg-gray-50 dark:bg-gray-800
-                text-left ml-4 sm:ml-6
-                border-l-4 border-blue-700 dark:border-blue-400
-              `}
-                >
-                  <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1">
-                    {item.date}
+                <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1">
+                  {item.date}
+                </p>
+                <h3 className="mb-1 font-bold text-lg text-blue-700 dark:text-blue-400">
+                  {item.title}
+                </h3>
+                {item.company && (
+                  <p className="mb-2 text-sm text-gray-700 dark:text-gray-300">
+                    {item.company}
                   </p>
-                  <h3 className="mb-1 font-bold text-lg text-blue-700 dark:text-blue-400">
-                    {item.title}
-                  </h3>
-                  {item.company && (
-                    <p className="mb-2 text-sm text-gray-700 dark:text-gray-300">{item.company}</p>
-                  )}
-                  <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
-                    {item.description}
-                  </p>
+                )}
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                  {item.description}
+                </p>
 
-                  {/* Tech Stack Display */}
-                  {item.techStack && item.techStack.length > 0 && (
-                    <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 dark:border-gray-700">
-                      {item.techStack.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium
+                {/* Tech Stack Display */}
+                {item.techStack && item.techStack.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                    {item.techStack.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium
                                  bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-heading" className="py-16">
+        <section
+          id="projects"
+          aria-labelledby="projects-heading"
+          className="py-16"
+        >
           <h2
             id="projects-heading"
             className="md:hidden sticky top-0 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
@@ -417,7 +372,7 @@ export default function Home() {
             Featured Projects
           </h2>
 
-          <div className="grid grid-cols-1 gap-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4">
             {myProjectsData.map((project: ProjectItem) => (
               <div
                 key={project.id}
@@ -494,7 +449,9 @@ export default function Home() {
 
         <footer className="bg-white dark:bg-gray-900 py-8 text-center text-gray-600 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-800">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="mb-2">&copy; {currentYear} Lee. All rights reserved.</p>
+            <p className="mb-2">
+              &copy; {currentYear} Lee. All rights reserved.
+            </p>
             <p>
               UI inspired by{" "}
               <a
