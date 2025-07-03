@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { type SectionLink, type TimelineItem, type ProjectItem } from "~/data";
 import { sections, myTimelineData, myProjectsData } from "~/data";
 import { GithubIcon, LinkIcon } from "lucide-react";
+import { cn } from "~/lib/utils";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -113,7 +114,10 @@ export default function Home() {
           </p>
         </header>
 
-        <nav className="mt-8" aria-label="Main Section Navigation">
+        <nav
+          className="hidden mt-8 md:block"
+          aria-label="Main Section Navigation"
+        >
           <ul className="flex flex-col gap-4">
             {sections.map((section: SectionLink) => {
               const targetHref = `#${section.id}`; // Build href with '#'
@@ -123,16 +127,16 @@ export default function Home() {
                 <li key={section.id}>
                   <a
                     href={targetHref}
-                    className={`w-fit transition-all font-medium duration-200
-              ${
-                isActive
-                  ? "text-blue-700 border-b-2 border-blue-700 dark:text-blue-400 dark:border-blue-400" // Active state for both modes
-                  : "text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-300" // Inactive state for both modes
-              }
-            `}
+                    className={cn(
+                      "relative inline-block font-medium py-1 px-0.5",
+                      "transition-all duration-300 ease-in-out group",
+                      isActive
+                        ? "text-blue-700 dark:text-blue-400"
+                        : "text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-300"
+                    )}
                     onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.preventDefault(); // Prevent default instant jump
-                      const targetElement = document.getElementById(section.id); // Get element by ID (without '#')
+                      const targetElement = document.getElementById(section.id);
                       if (targetElement) {
                         targetElement.scrollIntoView({
                           behavior: "smooth",
@@ -141,11 +145,19 @@ export default function Home() {
                       }
                       // Update URL hash and add to browser history
                       window.history.pushState(null, "", targetHref);
-                      // setActiveSection(section.id); // Immediately update active state for visual feedback
                     }}
                     {...(isActive && { "aria-current": "page" })}
                   >
                     {section.label}
+
+                    <span
+                      className={cn(
+                        "absolute bottom-0 left-0 h-[2px] rounded-full",
+                        "bg-blue-700 dark:bg-blue-400",
+                        "transition-all duration-300 ease-in-out",
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      )}
+                    ></span>
                   </a>
                 </li>
               );
@@ -153,7 +165,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        <div className="hidden flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 md:hidden">
           <Button
             asChild
             variant="outline"
@@ -185,9 +197,9 @@ export default function Home() {
           </Button>
         </div>
 
-        <footer className="mt-auto" aria-label="Social Media Links">
+        <footer className="mt-20 md:mt-auto" aria-label="Social Media Links">
           <ul className="flex gap-2">
-            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground  dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">
               <a
                 href="https://github.com/obbylee"
                 target="_blank"
@@ -208,7 +220,7 @@ export default function Home() {
               </a>
             </li>
 
-            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">
               <a
                 href="https://www.linkedin.com/in/leeobby/"
                 target="_blank"
@@ -229,7 +241,7 @@ export default function Home() {
               </a>
             </li>
 
-            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">
               <a
                 href="https://t.me/leeobby"
                 target="_blank"
@@ -250,9 +262,9 @@ export default function Home() {
               </a>
             </li>
 
-            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground hover:text-white dark:hover:text-white">
+            <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">
               <a
-                href="https://discord.com/users/your-discord-id"
+                href="https://discord.com/users/gandalf_socks@7619"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discord Profile"
@@ -284,20 +296,22 @@ export default function Home() {
           </h2>
 
           <p className="text-gray-800 dark:text-gray-400 mt-2">
-            Currently, I'm a{" "}
+            My journey as a{" "}
             <span className="font-bold text-blue-700 dark:text-blue-400">
               Software Engineer
             </span>{" "}
-            at{" "}
+            has always been driven by a genuine passion for building impactful
+            web systems that truly make a difference. Most recently, at{" "}
             <span className="text-blue-700 dark:text-blue-400">HashField</span>,
-            where I lead the development of{" "}
+            I had the opportunity to contribute to the development of{" "}
             <span className="font-bold text-blue-700 dark:text-blue-400">
               inadmin.io
             </span>
-            , an innovative SAAS platform designed for efficient web application
-            building. This involves creating flexible drag-and-drop form
-            builders with comprehensive analytics, implementing intricate
-            multi-level approval workflows, and ensuring robust data management.
+            , a SaaS platform designed to streamline administrative workflows.
+            In this role, I focused on crafting intuitive user experiences and
+            ensuring robust underlying solutions, from designing flexible
+            drag-and-drop form builders with comprehensive analytics to
+            perfecting intricate multi-level approval systems.
           </p>
 
           <p className="text-gray-800 dark:text-gray-400 mt-2">
@@ -437,7 +451,7 @@ export default function Home() {
                         aria-label={`View live demo of ${project.title}`}
                       >
                         <LinkIcon className="h-5 w-5 mr-1" />
-                        <span>Live Demo</span>
+                        <span>Live Url</span>
                       </a>
                     )}
                   </div>

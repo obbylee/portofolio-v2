@@ -5,6 +5,8 @@ import promptopiaScreenshoot from "~/assets/images/promptopia.png";
 import sushimanScreenshoot from "~/assets/images/sushiman.png";
 import hilinkScreenshoot from "~/assets/images/hilink.png";
 import nikeScreenshoot from "~/assets/images/nike.png";
+import feastfind from "~/assets/images/feastfind.png";
+
 export interface SectionLink {
   id: string;
   label: string;
@@ -30,7 +32,7 @@ export const myTimelineData: TimelineItem[] = [
     id: "hashfield",
     date: "Jan 2021 - Present",
     title: "Software Engineer",
-    company: "HashField",
+    company: "HashField (PT.Harvestindo Global Persada)",
     description:
       "Leading development of inadmin.io, an innovative SAAS platform for web app building. Responsibilities include creating flexible drag-and-drop form builders with comprehensive analytics, implementing multi-level approval workflows, ensuring robust data management, and automating financial planning tools.",
     techStack: [
@@ -77,6 +79,44 @@ export interface ProjectItem {
 }
 
 export const myProjectsData: ProjectItem[] = [
+  {
+    id: "feastfind",
+    title: "feastfind.com",
+    description:
+      "FeastFind is a food discovery platform that helps users find local restaurants, browse menus, view ratings, and navigate to places with ease.",
+    image: feastfind,
+    techStack: [
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Remix (React Router)",
+      "MapBox",
+      "Bun",
+      "zod",
+      "Uploadcare",
+      "Vercel",
+    ],
+    liveLink: "https://feastfind.com",
+    githubLink: "https://github.com/feastfind",
+  },
+  {
+    id: "feastfindapi",
+    title: "api.feastfind.com",
+    description:
+      "Core API for FeastFind, a food discovery platform. This API enables comprehensive restaurant search, menu browsing, ratings retrieval, and location-based data services. It's built for performance and reliability, serving as the essential interface for all FeastFind application features.",
+    techStack: [
+      "TypeScript",
+      "OpenApi Typescript",
+      "Scalar",
+      "Prisma ORM",
+      "Postgresql",
+      "Neon",
+      "Uploadcare",
+      "Render.com",
+    ],
+    liveLink: "https://api.feastfind.com/",
+    githubLink: "https://github.com/feastfind/feastfind-api",
+  },
   {
     id: "aliphone",
     title: "Aliphone B2B phone ecommerce",
