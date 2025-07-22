@@ -172,13 +172,13 @@ export default function Home() {
             className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-white"
           >
             <a
-              href="/resume.pdf"
+              href="https://1drv.ms/w/c/3cdcd2b725d3c39a/EaCv7ZvLuOdCrm5lhy0mM7kB8D57X_hwalNCRrcGKWCgug?e=TaQnCg"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download Resume (PDF)"
             >
               <DownloadCloudIcon className="h-5 w-5 mr-2" />
-              <span>Resume</span>
+              <span>View Resume</span>
             </a>
           </Button>
 
