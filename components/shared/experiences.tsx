@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 import { myTimelineData, type TimelineItem } from "@/data";
 
 import { ArrowUpRight } from "lucide-react";
@@ -24,10 +28,14 @@ const Experiences = () => {
       </a>
 
       <div className="flex flex-col gap-4">
-        {myTimelineData.map((item: TimelineItem) => (
-          <div
+        {myTimelineData.map((item: TimelineItem, index) => (
+          <motion.div
             key={item.id}
             className="w-full py-4 px-6 rounded-md bg-gray-50 dark:bg-gray-800 text-left border hover:border-blue-400"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 + index * 0.2, ease: "easeInOut" }}
+            viewport={{ once: true }}
           >
             <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1">
               {item.date}
@@ -58,7 +66,7 @@ const Experiences = () => {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

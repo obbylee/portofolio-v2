@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 import { type ProjectItem } from "@/data";
 import { myProjectsData } from "@/data";
 
@@ -28,14 +32,14 @@ const Works = () => {
       </Link>
 
       <div className="flex flex-col gap-4">
-        {myProjectsData.slice(0, 8).map((project: ProjectItem) => (
-          <div
-            key={project.id}
-            className="group relative rounded-lg shadow-md overflow-hidden
-                           bg-gray-50 dark:bg-gray-800
-                           border border-gray-200 dark:border-gray-700
-                           hover:shadow-lg transition-all duration-300 ease-in-out
-                           flex flex-col h-full"
+        {myProjectsData.slice(0, 8).map((project: ProjectItem, index) => (
+          <motion.div
+            key={index}
+            className="group relative rounded-lg shadow-md overflow-hidden bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg flex flex-col h-full"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 + index * 0.2, ease: "easeInOut" }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             {project.image && (
               <div className="relative w-full h-48 md:h-56 lg:h-64 overflow-hidden">
@@ -97,7 +101,7 @@ const Works = () => {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

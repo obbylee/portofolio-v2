@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { DownloadCloudIcon, SendHorizonalIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 const SideContent = () => {
   return (
@@ -14,14 +15,31 @@ const SideContent = () => {
       aria-label="Author Information and Navigation"
     >
       <header className="font-mono flex flex-col gap-4">
-        <h3 className="text-lg font-bold">_hello, I&apos;am Lee</h3>
-        <h1 className="text-4xl font-extrabold text-gray-800 dark:text-gray-100">
+        <motion.h3
+          className="text-lg font-bold"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, ease: "easeInOut" }}
+        >
+          _hello, I&apos;am Lee
+        </motion.h3>
+        <motion.h1
+          className="text-4xl font-extrabold text-gray-800 dark:text-gray-100"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, ease: "easeInOut" }}
+        >
           Fullstack Developer
-        </h1>
-        <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-sm">
+        </motion.h1>
+        <motion.p
+          className="mt-3 text-gray-600 dark:text-gray-400 max-w-sm"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8, ease: "easeInOut" }}
+        >
           Specializing in end-to-end web development, with a passion for
           what&apos;s next.
-        </p>
+        </motion.p>
       </header>
 
       <nav
@@ -93,7 +111,13 @@ const SideContent = () => {
         </Button>
       </div>
 
-      <footer className="mt-20 md:mt-auto" aria-label="Social Media Links">
+      <motion.footer
+        className="mt-20 md:mt-auto"
+        aria-label="Social Media Links"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, ease: "easeInOut" }}
+      >
         <ul className="flex gap-2">
           <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground  dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">
             <a
@@ -158,7 +182,7 @@ const SideContent = () => {
             </a>
           </li>
         </ul>
-      </footer>
+      </motion.footer>
     </aside>
   );
 };
