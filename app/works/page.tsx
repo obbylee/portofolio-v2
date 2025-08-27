@@ -5,6 +5,8 @@ import { useState } from "react";
 import { myProjectsData } from "@/data";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 const ProjectsPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -22,13 +24,24 @@ const ProjectsPage = () => {
   return (
     <div className="min-h-screen font-mono text-gray-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto py-12">
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="sticky top-0 left-4 py-4 mb-8 bg-black z-50 h-14">
+          <Link
+            href="/"
+            scroll={false}
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-blue-400 transition-colors duration-200"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Back to Home</span>
+          </Link>
+        </div>
+
+        <div className="overflow-x-auto flex gap-3 mb-16 px-4 md:px-0 md:flex-wrap justify-center ">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`
-                px-5 py-2 rounded-sm text-base font-medium transition-all duration-200 border
+                px-5 py-2 rounded-sm text-sm md:text-base font-medium transition-all duration-200 border
                 ${
                   activeCategory === category
                     ? "bg-blue-400 text-gray-900 border-blue-400 shadow-md"
@@ -55,8 +68,10 @@ const ProjectsPage = () => {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      priority={false}
-                      className="w-full h-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100 group-hover:scale-105"
+                      className="object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100 group-hover:scale-105"
+                      sizes="full"
+                      priority
+                      fill
                     />
                   ) : (
                     project.title
@@ -76,6 +91,10 @@ const ProjectsPage = () => {
                   >
                     {project.title}
                   </h3>
+
+                  <p className="py-2 text-sm md:hidden">
+                    {project.description}
+                  </p>
 
                   <div
                     className="flex flex-wrap gap-2 mt-auto

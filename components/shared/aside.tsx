@@ -42,9 +42,12 @@ const SideContent = () => {
         </motion.p>
       </header>
 
-      <nav
+      <motion.nav
         className="hidden mt-8 md:block"
         aria-label="Main Section Navigation"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, ease: "easeInOut" }}
       >
         <ul className="flex flex-col gap-4">
           {sections.map((section: SectionLink) => {
@@ -75,9 +78,14 @@ const SideContent = () => {
             );
           })}
         </ul>
-      </nav>
+      </motion.nav>
 
-      <div className="flex gap-4 mt-4 md:hidden">
+      <motion.div
+        className="flex gap-4 mt-4 md:hidden"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, ease: "easeInOut" }}
+      >
         <Button
           asChild
           variant="outline"
@@ -109,14 +117,14 @@ const SideContent = () => {
             <span>Email me</span>
           </a>
         </Button>
-      </div>
+      </motion.div>
 
       <motion.footer
         className="mt-20 md:mt-auto"
         aria-label="Social Media Links"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, ease: "easeInOut" }}
+        transition={{ delay: 1.2, ease: "easeInOut" }}
       >
         <ul className="flex gap-2">
           <li className="p-2 h-10 w-10 rounded-md bg-white dark:bg-gray-900 text-gray-800 dark:text-muted-foreground  dark:hover:bg-blue-800 hover:text-white dark:hover:text-white">

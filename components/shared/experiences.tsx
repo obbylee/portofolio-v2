@@ -16,16 +16,19 @@ const Experiences = () => {
         Experiences
       </h2>
 
-      <a
+      <motion.a
         href="https://1drv.ms/w/c/3cdcd2b725d3c39a/EaCv7ZvLuOdCrm5lhy0mM7kB8D57X_hwalNCRrcGKWCgug?e=TaQnCg"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Download Resume (PDF)"
         className="hidden md:flex gap-2 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.6, ease: "easeInOut" }}
       >
         <span>View full resume</span>
         <ArrowUpRight />
-      </a>
+      </motion.a>
 
       <div className="flex flex-col gap-4">
         {myTimelineData.map((item: TimelineItem, index) => (
@@ -34,8 +37,8 @@ const Experiences = () => {
             className="w-full py-4 px-6 rounded-md bg-gray-50 dark:bg-gray-800 text-left border hover:border-blue-400"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 + index * 0.2, ease: "easeInOut" }}
-            viewport={{ once: true }}
+            transition={{ delay: 0.8 + index * 0.2, ease: "easeInOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1">
               {item.date}

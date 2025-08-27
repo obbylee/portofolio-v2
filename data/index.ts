@@ -9,6 +9,7 @@ import hilinkScreenshoot from "@/assets/images/hilink.png";
 import nikeScreenshoot from "@/assets/images/nike.png";
 import feastfind from "@/assets/images/feastfind.png";
 import terra from "@/assets/images/terra-discover-api.png";
+import mojito from "@/assets/images/mojito.png";
 
 export interface SectionLink {
   id: string;
@@ -105,25 +106,6 @@ export const myProjectsData: ProjectItem[] = [
     githubLink: "https://github.com/feastfind",
   },
   {
-    id: "feastfindapi",
-    title: "api.feastfind.com",
-    description:
-      "Core API for FeastFind, a food discovery platform. This API enables comprehensive restaurant search, menu browsing, ratings retrieval, and location-based data services. It's built for performance and reliability, serving as the essential interface for all FeastFind application features.",
-    category: "Backend",
-    techStack: [
-      "TypeScript",
-      "OpenApi Typescript",
-      "Scalar",
-      "Prisma ORM",
-      "Postgresql",
-      "Neon",
-      "Uploadcare",
-      "Render.com",
-    ],
-    liveLink: "https://api.feastfind.com/",
-    githubLink: "https://github.com/feastfind/feastfind-api",
-  },
-  {
     id: "aliphone",
     title: "Aliphone B2B phone ecommerce",
     description:
@@ -142,25 +124,6 @@ export const myProjectsData: ProjectItem[] = [
       "Vercel",
     ],
     liveLink: "https://shop.obbylee.com/",
-    githubLink: "https://github.com/obbylee/phone-ecommerce",
-  },
-  {
-    id: "aliphone-api",
-    title: "Aliphone Backend API",
-    description:
-      "A robust RESTful API for an e-commerce phone platform, handling product management, user authentication, and cart. Designed for scalability and extensibility.",
-    category: "Backend",
-    techStack: [
-      "Hono",
-      "Bun",
-      "Better Auth",
-      "Typescript",
-      "tRPC",
-      "Zod",
-      "Prisma ORM",
-      "Postgresql",
-      "Docker",
-    ],
     githubLink: "https://github.com/obbylee/phone-ecommerce",
   },
   {
@@ -204,6 +167,28 @@ export const myProjectsData: ProjectItem[] = [
     liveLink: "https://promptopia-nine-tau.vercel.app/",
   },
   {
+    id: "mojito",
+    title: "Mojito",
+    description:
+      "Sip the spirit of summer. Explore our menu of crafted cocktails, a blend of premium ingredients, creative flair, and timeless recipes designed to delight your senses.",
+    image: mojito,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "GSAP"],
+    githubLink: "https://github.com/obbylee/mojito-uiux",
+    liveLink: "https://mojito-uiux.vercel.app/",
+  },
+  {
+    id: "Sushiman",
+    title: "Sushiman",
+    description:
+      "A beautifully crafted single-page website for Sushiman, a sushi restaurant brand. Designed to highlight the menu, chef, and authentic dining experience.",
+    image: sushimanScreenshoot,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/sushiman-uiux",
+    liveLink: "https://sushiman-uiux.vercel.app/",
+  },
+  {
     id: "terra",
     title: "Terra discover api",
     description:
@@ -222,17 +207,6 @@ export const myProjectsData: ProjectItem[] = [
       "Docker",
     ],
     githubLink: "https://github.com/obbylee/terra-discover-api",
-  },
-  {
-    id: "Sushiman",
-    title: "Sushiman",
-    description:
-      "A beautifully crafted single-page website for Sushiman, a sushi restaurant brand. Designed to highlight the menu, chef, and authentic dining experience.",
-    image: sushimanScreenshoot,
-    category: "Frontend",
-    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/obbylee/sushiman-uiux",
-    liveLink: "https://sushiman-uiux.vercel.app/",
   },
   {
     id: "carhub",
@@ -265,6 +239,44 @@ export const myProjectsData: ProjectItem[] = [
     techStack: ["NextJs", "React", "Tailwind CSS", "Typescript", "Netlify"],
     githubLink: "https://github.com/obbylee/portofolio/tree/main/traveluiux",
     liveLink: "https://luminous-gelato-91c420.netlify.app/",
+  },
+  {
+    id: "aliphone-api",
+    title: "Aliphone Backend API",
+    description:
+      "A robust RESTful API for an e-commerce phone platform, handling product management, user authentication, and cart. Designed for scalability and extensibility.",
+    category: "Backend",
+    techStack: [
+      "Hono",
+      "Bun",
+      "Better Auth",
+      "Typescript",
+      "tRPC",
+      "Zod",
+      "Prisma ORM",
+      "Postgresql",
+      "Docker",
+    ],
+    githubLink: "https://github.com/obbylee/phone-ecommerce",
+  },
+  {
+    id: "feastfindapi",
+    title: "api.feastfind.com",
+    description:
+      "Core API for FeastFind, a food discovery platform. This API enables comprehensive restaurant search, menu browsing, ratings retrieval, and location-based data services. It's built for performance and reliability, serving as the essential interface for all FeastFind application features.",
+    category: "Backend",
+    techStack: [
+      "TypeScript",
+      "OpenApi Typescript",
+      "Scalar",
+      "Prisma ORM",
+      "Postgresql",
+      "Neon",
+      "Uploadcare",
+      "Render.com",
+    ],
+    liveLink: "https://api.feastfind.com/",
+    githubLink: "https://github.com/feastfind/feastfind-api",
   },
   {
     id: "E-commerce Platform for Local Artisans",

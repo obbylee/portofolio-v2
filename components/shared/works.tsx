@@ -22,9 +22,7 @@ const Works = () => {
 
       <Link
         href={"/works"}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View full projects"
+        scroll={false}
         className="hidden md:flex gap-2 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
       >
         <span>View full projects</span>
@@ -34,11 +32,11 @@ const Works = () => {
       <div className="flex flex-col gap-4">
         {myProjectsData.slice(0, 8).map((project: ProjectItem, index) => (
           <motion.div
-            key={index}
+            key={project.id}
             className="group relative rounded-lg shadow-md overflow-hidden bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg flex flex-col h-full"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 + index * 0.2, ease: "easeInOut" }}
+            transition={{ ease: "easeInOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
             {project.image && (
@@ -46,8 +44,9 @@ const Works = () => {
                 <Image
                   src={project.image}
                   alt={`Screenshot of ${project.title}`}
-                  priority={false}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  sizes="full"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
@@ -93,7 +92,6 @@ const Works = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
-                    aria-label={`View live demo of ${project.title}`}
                   >
                     <LinkIcon className="h-5 w-5 mr-1" />
                     <span>Live Url</span>

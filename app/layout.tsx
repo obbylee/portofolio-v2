@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
-  title: "Lee Obby Waqoz - Fullstack Developer Portfolio",
+  title: "Lee O. - Fullstack Developer Portfolio",
   description:
-    "Portfolio of Lee Obby Waqoz, a Fullstack Developer specializing in end-to-end web development.",
+    "Portfolio of Lee O., a Fullstack Developer specializing in end-to-end web development.",
 };
 
 export default function RootLayout({
@@ -25,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }
