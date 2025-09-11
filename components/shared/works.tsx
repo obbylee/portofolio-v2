@@ -30,7 +30,7 @@ const Works = () => {
       </Link>
 
       <div className="flex flex-col gap-4">
-        {myProjectsData.slice(0, 8).map((project: ProjectItem, index) => (
+        {myProjectsData.slice(0, 8).map((project: ProjectItem) => (
           <motion.div
             key={project.id}
             className="group relative rounded-lg shadow-md overflow-hidden bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg flex flex-col h-full"

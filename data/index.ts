@@ -10,6 +10,8 @@ import nikeScreenshoot from "@/assets/images/nike.png";
 import feastfind from "@/assets/images/feastfind.png";
 import terra from "@/assets/images/terra-discover-api.png";
 import mojito from "@/assets/images/mojito.png";
+import zentry from "@/assets/images/zentry.png";
+import framer from "@/assets/images/framer.png";
 
 export interface SectionLink {
   id: string;
@@ -127,25 +129,48 @@ export const myProjectsData: ProjectItem[] = [
     githubLink: "https://github.com/obbylee/phone-ecommerce",
   },
   {
-    id: "threads-clone",
-    title: "Threads Clone",
+    id: "mojito",
+    title: "Mojito",
     description:
-      "A full-stack clone of Meta’s Threads — a modern, minimalist social media app for text-based conversations.",
-    category: "Full Stack",
-    techStack: [
-      "NextJS",
-      "Typescript",
-      "React",
-      "Shadcn UI",
-      "Zod",
-      "Clerk",
-      "UploadThing",
-      "Mongoose",
-      "MongoDB",
-    ],
-    image: threadsScreenshoot,
-    githubLink: "https://github.com/obbylee/portofolio/tree/main/threads",
-    liveLink: "https://portofolio-seven-gamma.vercel.app/",
+      "Sip the spirit of summer. Explore our menu of crafted cocktails, a blend of premium ingredients, creative flair, and timeless recipes designed to delight your senses.",
+    image: mojito,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "GSAP"],
+    githubLink: "https://github.com/obbylee/mojito-uiux",
+    liveLink: "https://mojito-uiux.vercel.app/",
+  },
+  {
+    id: "zentry",
+    title: "Zentry",
+    description:
+      "A visually dynamic web experience built with Next.js, Tailwind CSS, and GSAP.",
+    image: zentry,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "GSAP"],
+    githubLink: "https://github.com/obbylee/zentry-uiux",
+    liveLink: "https://zentry-navy-pi.vercel.app/",
+  },
+  {
+    id: "Sushiman",
+    title: "Sushiman",
+    description:
+      "A beautifully crafted single-page website for Sushiman, a sushi restaurant brand. Designed to highlight the menu, chef, and authentic dining experience.",
+    image: sushimanScreenshoot,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/sushiman-uiux",
+    liveLink: "https://sushiman-uiux.vercel.app/",
+  },
+  {
+    id: "framer",
+    title: "Framer SaaS",
+    description:
+      "A visually dynamic web experience built with Next.js, Tailwind CSS, and Framer Motion",
+    image: framer,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/framer-web",
+    liveLink: "https://framer-web-psi.vercel.app/",
   },
   {
     id: "promtopia",
@@ -167,26 +192,25 @@ export const myProjectsData: ProjectItem[] = [
     liveLink: "https://promptopia-nine-tau.vercel.app/",
   },
   {
-    id: "mojito",
-    title: "Mojito",
+    id: "threads-clone",
+    title: "Threads Clone",
     description:
-      "Sip the spirit of summer. Explore our menu of crafted cocktails, a blend of premium ingredients, creative flair, and timeless recipes designed to delight your senses.",
-    image: mojito,
-    category: "Frontend",
-    techStack: ["Nextjs", "React", "Tailwind CSS", "GSAP"],
-    githubLink: "https://github.com/obbylee/mojito-uiux",
-    liveLink: "https://mojito-uiux.vercel.app/",
-  },
-  {
-    id: "Sushiman",
-    title: "Sushiman",
-    description:
-      "A beautifully crafted single-page website for Sushiman, a sushi restaurant brand. Designed to highlight the menu, chef, and authentic dining experience.",
-    image: sushimanScreenshoot,
-    category: "Frontend",
-    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/obbylee/sushiman-uiux",
-    liveLink: "https://sushiman-uiux.vercel.app/",
+      "A full-stack clone of Meta’s Threads — a modern, minimalist social media app for text-based conversations.",
+    category: "Full Stack",
+    techStack: [
+      "NextJS",
+      "Typescript",
+      "React",
+      "Shadcn UI",
+      "Zod",
+      "Clerk",
+      "UploadThing",
+      "Mongoose",
+      "MongoDB",
+    ],
+    image: threadsScreenshoot,
+    githubLink: "https://github.com/obbylee/portofolio/tree/main/threads",
+    liveLink: "https://portofolio-seven-gamma.vercel.app/",
   },
   {
     id: "terra",
