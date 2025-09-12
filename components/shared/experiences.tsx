@@ -27,7 +27,16 @@ const Experiences = () => {
         transition={{ delay: 0.6, ease: "easeInOut" }}
       >
         <span>View full resume</span>
-        <ArrowUpRight />
+        <motion.span
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowUpRight />
+        </motion.span>
       </motion.a>
 
       <div className="flex flex-col gap-4">

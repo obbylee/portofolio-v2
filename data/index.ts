@@ -231,6 +231,7 @@ export const myProjectsData: ProjectItem[] = [
       "Docker",
     ],
     githubLink: "https://github.com/obbylee/terra-discover-api",
+    liveLink: "https://terra-discover-api.onrender.com/api/docs",
   },
   {
     id: "carhub",

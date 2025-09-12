@@ -26,7 +26,16 @@ const Works = () => {
         className="hidden md:flex gap-2 text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 backdrop-blur py-2.5 z-20"
       >
         <span>View full projects</span>
-        <ArrowUpRight />
+        <motion.span
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <ArrowUpRight />
+        </motion.span>
       </Link>
 
       <div className="flex flex-col gap-4">
