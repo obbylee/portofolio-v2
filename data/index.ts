@@ -12,6 +12,7 @@ import terra from "@/assets/images/terra-discover-api.png";
 import mojito from "@/assets/images/mojito.png";
 import zentry from "@/assets/images/zentry.png";
 import framer from "@/assets/images/framer.png";
+import nextcent from "@/assets/images/nextcent.png";
 
 export interface SectionLink {
   id: string;
@@ -162,15 +163,25 @@ export const myProjectsData: ProjectItem[] = [
     liveLink: "https://sushiman-uiux.vercel.app/",
   },
   {
-    id: "framer",
-    title: "Framer SaaS",
+    id: "terra",
+    title: "Terra discover api",
     description:
-      "A visually dynamic web experience built with Next.js, Tailwind CSS, and Framer Motion",
-    image: framer,
-    category: "Frontend",
-    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/obbylee/framer-web",
-    liveLink: "https://framer-web-psi.vercel.app/",
+      "A fast, lightweight backend API built with Hono and TypeScript. Designed to power discovery features for location-based or content-based applications with a modern and scalable architecture.",
+    image: terra,
+    category: "Backend",
+    techStack: [
+      "Typescript",
+      "Zod",
+      "Prisma ORM",
+      "Postgresql",
+      "OpenApi",
+      "Scalar",
+      "Hono",
+      "Bun",
+      "Docker",
+    ],
+    githubLink: "https://github.com/obbylee/terra-discover-api",
+    liveLink: "https://terra-discover-api.onrender.com/api/docs",
   },
   {
     id: "promtopia",
@@ -212,27 +223,7 @@ export const myProjectsData: ProjectItem[] = [
     githubLink: "https://github.com/obbylee/portofolio/tree/main/threads",
     liveLink: "https://portofolio-seven-gamma.vercel.app/",
   },
-  {
-    id: "terra",
-    title: "Terra discover api",
-    description:
-      "A fast, lightweight backend API built with Hono and TypeScript. Designed to power discovery features for location-based or content-based applications with a modern and scalable architecture.",
-    image: terra,
-    category: "Backend",
-    techStack: [
-      "Typescript",
-      "Zod",
-      "Prisma ORM",
-      "Postgresql",
-      "OpenApi",
-      "Scalar",
-      "Hono",
-      "Bun",
-      "Docker",
-    ],
-    githubLink: "https://github.com/obbylee/terra-discover-api",
-    liveLink: "https://terra-discover-api.onrender.com/api/docs",
-  },
+
   {
     id: "carhub",
     title: "Carhub",
@@ -242,6 +233,27 @@ export const myProjectsData: ProjectItem[] = [
     category: "Frontend",
     techStack: ["NextJS", "React", "Tailwind CSS", "Typescript", "API"],
     githubLink: "https://github.com/obbylee/portofolio/tree/main/carhub",
+  },
+  {
+    id: "framer",
+    title: "Framer SaaS",
+    description:
+      "A visually dynamic web experience built with Next.js, Tailwind CSS, and Framer Motion",
+    image: framer,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/framer-web",
+    liveLink: "https://framer-web-psi.vercel.app/",
+  },
+  {
+    id: "nextcent",
+    title: "Nextcent - Figma to Nexjs",
+    description: "https://www.figma.com/community/file/1222060007934600841",
+    image: nextcent,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS"],
+    githubLink: "https://github.com/obbylee/nextcent",
+    liveLink: "https://nextcent-seven-alpha.vercel.app/",
   },
   {
     id: "nike",
