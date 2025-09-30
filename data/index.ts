@@ -13,6 +13,7 @@ import mojito from "@/assets/images/mojito.png";
 import zentry from "@/assets/images/zentry.png";
 import framer from "@/assets/images/framer.png";
 import nextcent from "@/assets/images/nextcent.png";
+import darkSaas from "@/assets/images/dark-saas.png";
 
 export interface SectionLink {
   id: string;
@@ -244,6 +245,17 @@ export const myProjectsData: ProjectItem[] = [
     techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/obbylee/framer-web",
     liveLink: "https://framer-web-psi.vercel.app/",
+  },
+  {
+    id: "framer",
+    title: "Sleek SaaS UI Kit Adaptation",
+    description:
+      "An adaptation of the 'SaaS Website UI Kit' Figma design, showcasing server-side rendering with Next.js and advanced interactive animations with Framer Motion.",
+    image: darkSaas,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/saas-web-ui-dark",
+    liveLink: "https://saas-web-ui-dark.vercel.app/",
   },
   {
     id: "nextcent",
