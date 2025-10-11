@@ -10,11 +10,11 @@ import { motion } from "motion/react";
 const SideContent = () => {
   return (
     <aside
-      className="md:sticky md:top-0 py-24 h-screen flex flex-col"
+      className="md:sticky md:top-0 py-24 h-screen flex flex-col justify-center"
       role="complementary"
       aria-label="Author Information and Navigation"
     >
-      <header className="font-mono flex flex-col gap-4">
+      <header className="font-mono flex flex-col gap-4 md:gap-8">
         <motion.h3
           className="text-lg font-bold"
           initial={{ opacity: 0, x: -50 }}

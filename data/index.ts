@@ -14,6 +14,8 @@ import zentry from "@/assets/images/zentry.png";
 import framer from "@/assets/images/framer.png";
 import nextcent from "@/assets/images/nextcent.png";
 import darkSaas from "@/assets/images/dark-saas.png";
+import aistartup from "@/assets/images/ai-startup-web.png";
+import brainwave from "@/assets/images/brainwave.png";
 
 export interface SectionLink {
   id: string;
@@ -224,17 +226,6 @@ export const myProjectsData: ProjectItem[] = [
     githubLink: "https://github.com/obbylee/portofolio/tree/main/threads",
     liveLink: "https://portofolio-seven-gamma.vercel.app/",
   },
-
-  {
-    id: "carhub",
-    title: "Carhub",
-    description:
-      "A modern and responsive web application that lets users search, browse, and explore cars for sale or rent.",
-    image: carhubScreenshoot,
-    category: "Frontend",
-    techStack: ["NextJS", "React", "Tailwind CSS", "Typescript", "API"],
-    githubLink: "https://github.com/obbylee/portofolio/tree/main/carhub",
-  },
   {
     id: "framer",
     title: "Framer SaaS",
@@ -247,7 +238,7 @@ export const myProjectsData: ProjectItem[] = [
     liveLink: "https://framer-web-psi.vercel.app/",
   },
   {
-    id: "framer",
+    id: "Sleek-SaaS",
     title: "Sleek SaaS UI Kit Adaptation",
     description:
       "An adaptation of the 'SaaS Website UI Kit' Figma design, showcasing server-side rendering with Next.js and advanced interactive animations with Framer Motion.",
@@ -256,6 +247,38 @@ export const myProjectsData: ProjectItem[] = [
     techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/obbylee/saas-web-ui-dark",
     liveLink: "https://saas-web-ui-dark.vercel.app/",
+  },
+  {
+    id: "ai-startup-web",
+    title: "Sleek SaaS UI Kit Adaptation",
+    description:
+      "An adaptation of the 'SaaS Website UI Kit' Figma design, showcasing server-side rendering with Next.js and advanced interactive animations with Framer Motion.",
+    image: aistartup,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/ai-startup-web",
+    liveLink: "https://ai-startup-web.vercel.app/",
+  },
+  {
+    id: "brainwave",
+    title: "brainwave",
+    description:
+      "An adaptation of the Beautiful AI Landing Page UI Kit at ui8.net",
+    image: brainwave,
+    category: "Frontend",
+    techStack: ["Nextjs", "React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/obbylee/brainwave-web",
+    liveLink: "https://brainwave-web-omega.vercel.app/",
+  },
+  {
+    id: "carhub",
+    title: "Carhub",
+    description:
+      "A modern and responsive web application that lets users search, browse, and explore cars for sale or rent.",
+    image: carhubScreenshoot,
+    category: "Frontend",
+    techStack: ["NextJS", "React", "Tailwind CSS", "Typescript", "API"],
+    githubLink: "https://github.com/obbylee/portofolio/tree/main/carhub",
   },
   {
     id: "nextcent",

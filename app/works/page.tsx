@@ -35,16 +35,16 @@ const ProjectsPage = () => {
           </Link>
         </div>
 
-        <div className="overflow-x-auto flex gap-3 mb-16 px-4 md:px-0 md:flex-wrap justify-center ">
+        <div className="sticky top-14 z-50 overflow-x-auto flex gap-3 mb-16 py-4 md:flex-wrap bg-black">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`
-                px-5 py-2 rounded-sm text-sm md:text-base font-medium transition-all duration-200 border
+                px-5 py-2 rounded-sm text-sm md:text-base font-medium transition-all duration-200 border flex-none
                 ${
                   activeCategory === category
-                    ? "bg-blue-400 text-gray-900 border-blue-400 shadow-md"
+                    ? "bg-blue-400/70 text-gray-300 border-blue-400 shadow-md"
                     : "bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700 hover:text-gray-100"
                 } 
               `}
